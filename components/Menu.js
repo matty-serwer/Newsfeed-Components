@@ -49,8 +49,19 @@ function menuMaker(items) {
   })
 
   menuButton.addEventListener('click', () => {
+    if(menuDiv.classList.contains('menu--open')){
+      menuDiv.classList.add('menu--close')
+    } else {
+      menuDiv.classList.remove('menu--close')
+    }
     menuDiv.classList.toggle('menu--open')
   })
+  
+  // const openMenu = document.querySelector('menu--open')
+
+  // openMenu.addEventListener('click', () => {
+  //   openMenu.classList.add('menu--close')
+  // })
 
   return menuDiv
 }

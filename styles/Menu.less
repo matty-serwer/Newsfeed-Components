@@ -4,11 +4,21 @@
   cursor: pointer;
 }
 
+@keyframes slideLeft {
+  0% {left: 0px;}
+  100% {left: -400px;}
+}
+
+.menu--close {
+  animation-name: slideLeft;
+  animation-duration: 2s;
+}
+
 .menu {
-  display: none;
+  // display: none;
   position: fixed;
   top: 75px;
-  left: 0;
+  left: -400px;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
@@ -25,6 +35,15 @@
   text-align: center;
 }
 
+@keyframes slideRight {
+  0% {left: -400px;}
+  100% {left: 0px;}
+}
+
 .menu--open {
   display: block;
+  animation-name: slideRight;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
+

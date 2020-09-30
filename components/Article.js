@@ -152,6 +152,11 @@ function articleMaker(article) {
   thirdParagraph.textContent = article.thirdParagraph
 
   expandButton.addEventListener('click', () => {
+    if(articleDiv.classList.contains('article-open')) {
+      articleDiv.classList.add('article-close')
+    } else {
+      articleDiv.classList.remove('article-close')
+    }
     articleDiv.classList.toggle('article-open')
   })
   
