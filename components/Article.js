@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Covert Pizza Slices Invade Coding Conference',
+    date: 'Jan 1st, 2020',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, perferendis? Neque veritatis vel sapiente laboriosam iusto quae perspiciatis, consectetur facere!`,
+
+    secondParagraph: `But there was no pizza!`,
+
+    thirdParagraph: `The ninjas stole it.`
   }
 ];
 
@@ -155,5 +164,3 @@ data.forEach(article => {
   const newArticle = articleMaker(article)
   articles.appendChild(newArticle)
 })
-
-console.log(articleMaker(data[0]))
