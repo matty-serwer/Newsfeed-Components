@@ -125,6 +125,7 @@ const data = [
 
 function articleMaker(article) {
 
+  // create elements
   const articleDiv = document.createElement('div')
   const articleTitle = document.createElement('h2')
   const articleDate = document.createElement('p')
@@ -133,11 +134,13 @@ function articleMaker(article) {
   const thirdParagraph = document.createElement('p')
   const expandButton = document.createElement('span')
 
+  // assign required classes
   articleDiv.classList.add('article')
   articleDate.classList.add('date')
   expandButton.classList.add('expandButton')
   expandButton.textContent = '+'
 
+  // organize elements
   articleDiv.appendChild(articleTitle)
   articleDiv.appendChild(articleDate)
   articleDiv.appendChild(firstParagraph)
@@ -145,17 +148,21 @@ function articleMaker(article) {
   articleDiv.appendChild(thirdParagraph)
   articleDiv.appendChild(expandButton)
 
+  // assign data
   articleTitle.textContent = article.title
   articleDate.textContent = article.date
   firstParagraph.textContent = article.firstParagraph
   secondParagraph.textContent = article.secondParagraph
   thirdParagraph.textContent = article.thirdParagraph
 
+  // toggle open and close css, and toggle expandButton appearance
   expandButton.addEventListener('click', () => {
     if(articleDiv.classList.contains('article-open')) {
       articleDiv.classList.add('article-close')
+      expandButton.textContent = '+'
     } else {
       articleDiv.classList.remove('article-close')
+      expandButton.textContent = '-'
     }
     articleDiv.classList.toggle('article-open')
   })
@@ -163,8 +170,10 @@ function articleMaker(article) {
   return articleDiv
 }
 
+// assign the parent element
 const articles = document.querySelector('.articles')
 
+// loop in the data
 data.forEach(article => {
   const newArticle = articleMaker(article)
   articles.appendChild(newArticle)
